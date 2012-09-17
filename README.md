@@ -1,6 +1,8 @@
 # TODO
 
 - schema
+- extension
+- allow url || host
 - allow cb omit
 - basic auth
 - digest
