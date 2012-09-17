@@ -2,7 +2,7 @@
   "name": "sourcery",
   "version": "0.0.0",
   "description": "Consume any RESTful API with just a few lines of JavaScript",
-  "main": "index.js",
+  "main": "./lib/sourcery.js",
   "scripts": {
     "test": "make test"
   },
@@ -13,9 +13,14 @@
   "keywords": [
     "restful", "rest", "api"
   ],
+  "dependencies": {
+    "super": "0.2.x",
+    "request": "2.11.1"
+  },
   "devDependencies": {
     "mocha": "1.4.x",
-    "chai": "1.2.x"
+    "chai": "1.2.x",
+    "express": ""
   },
   "author": "Veselin Todorov <hi@vesln.com>",
   "license": "MIT License",

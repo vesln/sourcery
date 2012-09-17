@@ -1,4 +1,4 @@
-TESTS = test/*.test.js
+TESTS = $(shell find test/ -name "*.test.js" -type f | sort)
 UI = tdd
 REPORTER = dot
 
