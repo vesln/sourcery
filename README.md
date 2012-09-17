@@ -1,6 +1,7 @@
 # TODO
 
 - schema
+- where conditions
 - extension
 - allow url || host
 - allow cb omit

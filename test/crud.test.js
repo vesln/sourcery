@@ -1,14 +1,15 @@
 var chai = require('chai');
 var should = chai.should();
 var Resource = require('../').Resource;
+
+var url = require('./support/url');
 var server = require('./support/server');
 
 // TODO: move to a url helper
-var PORT = 8989;
 
 describe('RESTful CRUD', function() {
   before(function(done) {
-    server.listen(PORT, done);
+    server.listen(url.PORT, done);
   });
 
   after(function(done) {
@@ -16,7 +17,7 @@ describe('RESTful CRUD', function() {
   });
 
   var Person = Resource.extend({
-    url: 'http://localhost:' + PORT + '/people'
+    url: url('/people')
   });
 
   it('can fetch resources by id', function(done) {
