@@ -1,0 +1,25 @@
+{
+  "name": "sourcery",
+  "version": "0.0.0",
+  "description": "Consume any RESTful API with just a few lines of JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vesln/sourcery"
+  },
+  "keywords": [
+    "restful", "rest", "api"
+  ],
+  "devDependencies": {
+    "mocha": "1.4.x",
+    "chai": "1.2.x"
+  },
+  "author": "Veselin Todorov <hi@vesln.com>",
+  "license": "MIT License",
+  "engines": {
+    "node": ">= 0.6.0"
+  }
+}
