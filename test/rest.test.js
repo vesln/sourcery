@@ -35,7 +35,7 @@ describe('RESTful CRUD', function() {
     });
   });
 
-  it('can update a resource', function(done) {
+  it('can update a resource with #update', function(done) {
     var person = new Person({ id: 1 });
 
     person.set('foo', 'bar');
@@ -46,20 +46,31 @@ describe('RESTful CRUD', function() {
     });
   });
 
+  it('can update a resource with #save', function(done) {
+    var person = new Person({ id: 1 });
+    person.set('name', 'Ves');
+
+    person.save(function(err, person) {
+      person.get('name').should.eq('Ves');
+      person.get('_action').should.eq('update');
+      done();
+    });
+  });
+
   describe('creating a resource', function(done) {
     it('can be created with #save', function(done) {
       var person = new Person;
       person.set('name', 'Jeff');
 
       person.save(function(err, person) {
-        person.get().should.eql({ name: 'Jeff' })
+        person.get().should.eql({ name: 'Jeff', _action: 'create' })
         done();
       });
     });
 
     it('can be created with .create', function(done) {
       Person.create({ name: 'Jeff' }, function(err, person) {
-        person.get().should.eql({ name: 'Jeff' })
+        person.get().should.eql({ name: 'Jeff', _action: 'create' });
         done();
       });
     });

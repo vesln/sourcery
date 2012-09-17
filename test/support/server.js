@@ -17,10 +17,12 @@ app.get('/people', function(req, res) {
 });
 
 app.post('/people', function(req, res) {
+  req.body._action = 'create';
   res.json(req.body);
 });
 
 app.put('/people/:id', function(req, res) {
+  req.body._action = 'update';
   res.json(req.body);
 });
 
