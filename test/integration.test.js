@@ -5,8 +5,6 @@ var Resource = require('../').Resource;
 var url = require('./support/url');
 var server = require('./support/server');
 
-// TODO: move to a url helper
-
 describe('RESTful CRUD', function() {
   before(function(done) {
     server.listen(url.PORT, done);
@@ -17,13 +15,12 @@ describe('RESTful CRUD', function() {
   });
 
   var Person = Resource.extend({
-    url: url('/people'),
     host: url(),
     path: '/people'
   });
 
   it('can fetch resources by id', function(done) {
-    Person.first(1, function(err, person) {
+    Person.first({ id: 1 }, function(err, person) {
       person.should.be.an.instanceof(Person);
       person.get('id').should.eq(1);
       done();
@@ -96,4 +93,19 @@ describe('RESTful CRUD', function() {
       });
     });
   });
+
+  describe('nested resource', function() {
+    var Users = Resource.extend({
+      host: url(),
+        path: '/projects/:project_id/users'
+    });
+
+    it('replaces placeholders with attribute values in order to support nested resources', function(done) {
+      Users.all({ project_id: 1 }, function(err, users) {
+        users.should.have.lengthOf(2);
+        done();
+      });
+    });
+  });
 });
+

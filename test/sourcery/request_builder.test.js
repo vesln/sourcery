@@ -108,8 +108,7 @@ describe('RequestBuilder', function() {
       .type('delete')
       .host('http://example.com')
       .path('/users/:user_id/projects')
-      .attributes({ id: 1 })
-      .params({ user_id: 3 });
+      .attributes({ id: 1, user_id: 3 })
 
     var expected = {
       json: true,

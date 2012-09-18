@@ -30,4 +30,8 @@ app.del('/people/:id', function(req, res) {
   res.end();
 });
 
+app.get('/projects/:project_id/users', function(req, res) {
+  res.json([{ name: 'John' }, { name: 'Jeff' }]);
+});
+
 module.exports = app;
