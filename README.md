@@ -1,6 +1,5 @@
 # TODO
 
-- allow cb omit
 - basic auth
 - handle errors
 
