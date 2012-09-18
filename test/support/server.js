@@ -1,6 +1,17 @@
 var express = require('express');
 var app = express.createServer();
 
+function basicAuth(req, res, next) {
+  var auth = req.headers.authorization.split(' ')[1];
+  var credentials = new Buffer(auth, 'base64').toString().split(':');
+
+  if (credentials[0] === 'user' && credentials[1] === 'pass') {
+    return next();
+  }
+
+  throw new Error('Invalid or missing credentials');
+};
+
 app.configure(function() {
   app.use(express.bodyParser());
 });
@@ -38,6 +49,10 @@ app.get('/projects', function(req, res) {
   if (req.query.secret === 'true' && req.query.auth === 'true') {
     res.json([{ name: 'John' }, { name: 'Jeff' }]);
   }
+});
+
+app.get('/repos', basicAuth, function(req, res) {
+  res.json([{ name: 'github' }, { name: 'google' }]);
 });
 
 module.exports = app;

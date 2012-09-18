@@ -1,7 +1,5 @@
 # TODO
 
-- basic auth
-
 ## Future TODO
 
 - test helpers
@@ -9,3 +7,4 @@
 - validation
 - associations
 - handle errors
+- chai test helpers
