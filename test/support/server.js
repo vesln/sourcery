@@ -34,4 +34,10 @@ app.get('/projects/:project_id/users', function(req, res) {
   res.json([{ name: 'John' }, { name: 'Jeff' }]);
 });
 
+app.get('/projects', function(req, res) {
+  if (req.query.secret === 'true' && req.query.auth === 'true') {
+    res.json([{ name: 'John' }, { name: 'Jeff' }]);
+  }
+});
+
 module.exports = app;

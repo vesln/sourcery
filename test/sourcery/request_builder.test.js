@@ -137,4 +137,24 @@ describe('RequestBuilder', function() {
 
     builder.build().should.eql(expected);
   });
+
+  it('can handle query params', function() {
+    var builder = new Builder;
+
+    builder
+      .type('delete')
+      .host('http://example.com')
+      .path('/projects')
+      .attributes({ id: 1 })
+      .query({ secret: true, auth: true })
+
+    var expected = {
+      json: true,
+      method: 'DELETE',
+      url: 'http://example.com/projects/1',
+      qs: { secret: true, auth: true }
+    };
+
+    builder.build().should.eql(expected);
+  });
 });

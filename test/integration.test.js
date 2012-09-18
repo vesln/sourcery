@@ -95,14 +95,28 @@ describe('RESTful CRUD', function() {
   });
 
   describe('nested resource', function() {
-    var Users = Resource.extend({
+    var User = Resource.extend({
       host: url(),
-        path: '/projects/:project_id/users'
+      path: '/projects/:project_id/users'
     });
 
     it('replaces placeholders with attribute values in order to support nested resources', function(done) {
-      Users.all({ project_id: 1 }, function(err, users) {
+      User.all({ project_id: 1 }, function(err, users) {
         users.should.have.lengthOf(2);
+        done();
+      });
+    });
+  });
+
+  describe('query params', function() {
+    var Project = Resource.extend({
+      host: url(),
+      path: '/projects'
+    });
+
+    it('can handle query params', function(done) {
+      Project.where('secret', true ).where('auth', true).all(function(err, projects) {
+        projects.should.have.lengthOf(2);
         done();
       });
     });

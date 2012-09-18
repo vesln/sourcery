@@ -1,6 +1,5 @@
 # TODO
 
-- where conditions
 - allow cb omit
 - basic auth
 - handle errors
