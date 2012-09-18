@@ -17,7 +17,9 @@ describe('RESTful CRUD', function() {
   });
 
   var Person = Resource.extend({
-    url: url('/people')
+    url: url('/people'),
+    host: url(),
+    path: '/people'
   });
 
   it('can fetch resources by id', function(done) {
