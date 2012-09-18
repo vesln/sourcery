@@ -1,6 +1,7 @@
 # TODO
 
 - schema
+- toJSON
 - where conditions
 - extension
 - allow url || host
