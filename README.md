@@ -1,11 +1,11 @@
 # TODO
 
 - basic auth
-- handle errors
 
 ## Future TODO
 
+- test helpers
 - schema
 - validation
-- digest
 - associations
+- handle errors
