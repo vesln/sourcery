@@ -1,9 +1,22 @@
-var express = require('express');
-var app = express.createServer();
+
+/**
+ * External dependencies.
+ */
+
+var express = require('express')
+  , app = express.createServer();
+
+/**
+ * Basic auth middleware.
+ *
+ * @param {Object} request
+ * @param {Object} response
+ * @param {Function} next middleware
+ */
 
 function basicAuth(req, res, next) {
-  var auth = req.headers.authorization.split(' ')[1];
-  var credentials = new Buffer(auth, 'base64').toString().split(':');
+  var auth = req.headers.authorization.split(' ')[1]
+    , credentials = new Buffer(auth, 'base64').toString().split(':');
 
   if (credentials[0] === 'user' && credentials[1] === 'pass') {
     return next();
@@ -54,5 +67,9 @@ app.get('/projects', function(req, res) {
 app.get('/repos', basicAuth, function(req, res) {
   res.json([{ name: 'github' }, { name: 'google' }]);
 });
+
+/**
+ * Expose `app`.
+ */
 
 module.exports = app;
