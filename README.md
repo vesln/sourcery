@@ -1,12 +1,13 @@
 # TODO
 
+- handle errors
+- include root element or not
 - sane readme
-- docs
+
 - test helpers
 - schema
-- validation
+- validations
 - associations
-- handle errors
+
 - handle xml
-- include root element or not
 - Resource.member()

@@ -2,7 +2,7 @@
   "name": "sourcery",
   "version": "0.0.1",
   "description": "Consume any RESTful API with just a few lines of JavaScript",
-  "main": "./lib/sourcery.js",
+  "main": "./index.js",
   "scripts": {
     "test": "make test"
   },
@@ -11,14 +11,16 @@
     "url": "https://github.com/vesln/sourcery"
   },
   "keywords": [
-    "restful", "rest", "api"
+    "restful",
+    "rest",
+    "api"
   ],
   "dependencies": {
     "super": "0.2.x",
     "request": "2.11.1"
   },
   "devDependencies": {
-    "mocha": "1.4.x",
+    "mocha": "1.6.x",
     "chai": "1.2.x",
     "express": ""
   },

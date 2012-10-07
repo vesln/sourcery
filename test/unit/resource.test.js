@@ -9,7 +9,7 @@ var Resource = require('../../');
  * Subject dependencies.
  */
 
-var RequestBuilder = require('../../lib/request_builder')
+var RequestBuilder = require('../../lib/request-builder')
 
 /**
  * Just a dummy fixtures.

@@ -1,6 +1,3 @@
-var chai = require('chai');
-var should = chai.should();
-
 var url = require('../support/url');
 var server = require('../support/server');
 
@@ -84,14 +81,14 @@ describe('RESTful CRUD', function() {
       var person = new Person({ id: 1 });
 
       person.destroy(function(err) {
-        should.not.exist(err);
+        (err === null).should.be.true;
         done();
       });
     });
 
     it('can be deleted with .destroy', function(done) {
       Person.destroy(1, function(err) {
-        should.not.exist(err);
+        (err === null).should.be.true;
         done();
       });
     });
