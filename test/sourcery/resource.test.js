@@ -9,7 +9,7 @@ var should = chai.should();
  *
  * @type {Function}
  */
-var Resource = require('../../').Resource;
+var Resource = require('../../');
 var RequestBuilder = require('../../lib/sourcery/request_builder')
 
 /**

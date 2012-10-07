@@ -1,11 +1,10 @@
 var chai = require('chai');
 var should = chai.should();
 
-
 var url = require('./support/url');
 var server = require('./support/server');
 
-var Resource = require('../').Resource;
+var Resource = require('../');
 var BasicAuth = require('../').BasicAuth;
 
 describe('RESTful CRUD', function() {
