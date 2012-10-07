@@ -9,7 +9,7 @@ var should = chai.should();
  *
  * @type {Function}
  */
-var Builder = require('../../lib/sourcery/request_builder')
+var Builder = require('../../lib/request_builder')
 
 describe('RequestBuilder', function() {
   it('can build params for create', function() {

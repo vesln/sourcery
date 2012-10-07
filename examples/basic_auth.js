@@ -1,4 +1,18 @@
+
+/**
+ * Base `Resource`.
+ *
+ * @type {Function}
+ */
+
 var Resource = require('..');
+
+/**
+ * Basic Authentication.
+ *
+ * @type {Function}
+ */
+
 var BasicAuth = require('..').BasicAuth;
 
 var Base = Resource.extend({
@@ -17,8 +31,4 @@ var Project = Base.extend({
 
 var Error = Base.extend({
   path: '/projects/:project_id/errors'
-});
-
-Error.all({ project_id: 1 }, function(err, projects) {
-  console.log(projects[0]);
 });
