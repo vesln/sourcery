@@ -17,8 +17,8 @@ describe('RESTful CRUD', function() {
     server.listen(url.PORT, done);
   });
 
-  after(function(done) {
-    server.close(done);
+  after(function() {
+    server.close();
   });
 
   var Person = Resource.extend({

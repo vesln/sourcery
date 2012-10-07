@@ -28,10 +28,9 @@ describe('Basic auth', function() {
     server.listen(url.PORT, done);
   });
 
-  after(function(done) {
-    server.close(done);
+  after(function() {
+    server.close();
   });
-
 
   it('can handle basic access authentication', function(done) {
     Repo.all(function(err, repos) {
