@@ -15,11 +15,12 @@ describe('RequestBuilder', function() {
       .type('create')
       .host('http://example.com')
       .path('/projects')
-      .attributes({ id: 1 })
+      .attributes({ foo: 'bar' })
 
     var expected = {
-      json: { id: 1 },
+      json: { foo: 'bar' },
       method: 'POST',
+      qs: undefined,
       url: 'http://example.com/projects',
     };
 
@@ -38,6 +39,7 @@ describe('RequestBuilder', function() {
     var expected = {
       json: { id: 1 },
       method: 'PUT',
+      qs: undefined,
       url: 'http://example.com/projects/1',
     };
 
@@ -55,6 +57,7 @@ describe('RequestBuilder', function() {
 
     var expected = {
       json: true,
+      qs: undefined,
       method: 'DELETE',
       url: 'http://example.com/projects/1',
     };
@@ -73,6 +76,7 @@ describe('RequestBuilder', function() {
     var expected = {
       json: true,
       method: 'GET',
+      qs: undefined,
       url: 'http://example.com/projects',
     };
 
@@ -90,6 +94,7 @@ describe('RequestBuilder', function() {
 
     var expected = {
       json: true,
+      qs: undefined,
       method: 'GET',
       url: 'http://example.com/projects/1',
     };
@@ -109,6 +114,7 @@ describe('RequestBuilder', function() {
     var expected = {
       json: true,
       method: 'DELETE',
+      qs: undefined,
       url: 'http://example.com/users/3/projects/1',
     };
 
@@ -127,6 +133,7 @@ describe('RequestBuilder', function() {
 
     var expected = {
       json: true,
+      qs: undefined,
       method: 'DELETE',
       url: 'http://example.com/projects/1.json',
     };

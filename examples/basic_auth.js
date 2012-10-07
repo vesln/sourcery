@@ -1,8 +1,6 @@
 
 /**
  * Base `Resource`.
- *
- * @type {Function}
  */
 
 var Resource = require('..');

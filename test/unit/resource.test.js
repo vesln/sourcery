@@ -1,8 +1,6 @@
 
 /**
  * Subject.
- *
- * @type {Function}
  */
 
 var Resource = require('../../');
@@ -15,8 +13,6 @@ var RequestBuilder = require('../../lib/request_builder')
 
 /**
  * Just a dummy fixtures.
- *
- * @type {Resource}
  */
 
 var Person = Resource.extend({

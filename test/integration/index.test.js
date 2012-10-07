@@ -41,6 +41,7 @@ describe('RESTful CRUD', function() {
     var person = new Person({ id: 1 });
 
     person.set('foo', 'bar');
+
     person.update({ 'baz': 'test' }, function(err, person) {
       person.get('foo').should.eq('bar');
       person.get('baz').should.eq('test');
