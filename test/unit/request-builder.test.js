@@ -5,7 +5,7 @@
  * @type {Function}
  */
 
-var Builder = require('../../lib/request-builder')
+var Builder = require('../../').RequestBuilder;
 
 describe('RequestBuilder', function() {
   it('can build params for create', function() {
