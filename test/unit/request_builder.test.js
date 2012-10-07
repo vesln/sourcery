@@ -1,14 +1,10 @@
-/**
- * Test dependencies.
- */
-var chai = require('chai');
-var should = chai.should();
 
 /**
  * Subject.
  *
  * @type {Function}
  */
+
 var Builder = require('../../lib/request_builder')
 
 describe('RequestBuilder', function() {

@@ -1,22 +1,24 @@
-/**
- * Test dependencies.
- */
-var chai = require('chai');
-var should = chai.should();
 
 /**
  * Subject.
  *
  * @type {Function}
  */
+
 var Resource = require('../../');
+
+/**
+ * Subject dependencies.
+ */
+
 var RequestBuilder = require('../../lib/request_builder')
 
 /**
  * Just a dummy fixtures.
  *
- * @type {Function}
+ * @type {Resource}
  */
+
 var Person = Resource.extend({
   host: 'host',
   path: 'path',
