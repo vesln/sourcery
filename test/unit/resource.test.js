@@ -29,6 +29,7 @@ describe('Resource', function() {
 
   it('can return a builder', function() {
     var person = new Person({ id: 1 });
+
     var builder = person.builder();
 
     builder.should.be.an.instanceof(RequestBuilder);

@@ -1,8 +1,16 @@
-var url = require('../support/url');
+
+/**
+ * Test support.
+ */
+
+var url    = require('../support/url');
 var server = require('../support/server');
 
+/**
+ * Subject.
+ */
+
 var Resource = require('../../');
-var BasicAuth = require('../../').BasicAuth;
 
 describe('RESTful CRUD', function() {
   before(function(done) {
@@ -117,21 +125,6 @@ describe('RESTful CRUD', function() {
     it('can handle query params', function(done) {
       Project.where('secret', true ).where('auth', true).all(function(err, projects) {
         projects.should.have.lengthOf(2);
-        done();
-      });
-    });
-  });
-
-  describe('basic auth', function() {
-    var Repo = Resource.extend({
-      host: url(),
-      path: '/repos',
-      auth: { type: BasicAuth, user: 'user', pass: 'pass' }
-    });
-
-    it('can handle basic access authentication', function(done) {
-      Repo.all(function(err, repos) {
-        repos.should.have.lengthOf(2);
         done();
       });
     });
