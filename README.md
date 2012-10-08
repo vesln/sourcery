@@ -2,7 +2,6 @@
 
 # TODO
 
-- remove the question mark
 - load the new attributes after sync
 - sane readme
 
