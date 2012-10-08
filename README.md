@@ -2,12 +2,134 @@
 
 # Sourcery
 
-Sourcery is your framework for building RESTful API clients. It's heavily
+Sourcery is a framework for building RESTful API clients. It's heavily
 inspired by
 [ActiveResource](https://github.com/rails/activeresoucre) and behaves almost the
 same way. It's blazing fast and extremely simple to use.
 
 ## Synopsis
+
+### Defining resources
+
+```js
+var Resource = require('sourcery');
+
+var Base = Resource.extend({
+  host: 'http://example.com/api/v1', // base host
+  ext:  'json',                      // optional, will include `.json` in the URLs
+  root: true,                        // optional, will include root element
+});
+
+var Project = Resource.extend({
+  path: '/projects', // http://example.com/api/v1/projects
+  name: 'Project',   // optional, this is the name for the root element
+});
+```
+
+### CRUD
+
+Find one:
+
+```js
+Project.first({ id: 1 }, function(err, project) {
+  project.get('name');
+  project.get('id');
+});
+```
+
+Find many:
+
+```js
+Project.all({ user_id: 1 }, function(err, projects) {
+  projects[0].get('user_id');
+  projects[1].get('user_id');
+});
+```
+
+Create:
+
+```js
+var project = new Project;
+project.set('name', 'Top secret');
+
+project.save(function(err, project) {
+  console.log(project);
+});
+```
+
+```js
+Project.create({ name: 'Secret' }, function(err, project) {
+  console.log(project);
+});
+```
+
+Update:
+
+```js
+var project = new Project({ id: 1 });
+project.set('name', 'New name');
+
+project.save(function(err, project) {
+  console.log(project);
+});
+```
+
+Destroy:
+
+```js
+Project.destroy(1, function(err) {
+  // done;
+});
+```
+
+```js
+var project = new Project({ id: 1 });
+
+project.destroy(function(err) {
+  // done
+});
+```
+
+Include params:
+
+```js
+Project
+  .where('page', 1)
+  .where('limit', 3)
+  .all(function(err, projects) {
+    console.log(projects);
+  });
+```
+
+### Nested resources
+
+```js
+var Task = Resource.extend({
+  path: '/projects/:project_id/tasks',
+});
+```
+
+Sourcery will replace the placeholders, in this example ":project_id",
+with the matching attribute.
+
+### Basic Auth
+
+```js
+var BasicAuth = require('sourcery').BasicAuth;
+
+var Base = Resource.extend({
+  host: 'http://example.com/api/v1',
+  auth: {
+    type:  BasicAuth,
+    user: 'replace-with-real-user',
+    pass: 'replace-with-real-pass'
+  }
+});
+```
+
+### Wait, but what about...
+
+Please open an issues if you have feature requests. Thanks!
 
 ## Install
 
