@@ -20,7 +20,7 @@ var Base = Resource.extend({
   root: true,                        // optional, will include root element
 });
 
-var Project = Resource.extend({
+var Project = Base.extend({
   path: '/projects', // http://example.com/api/v1/projects
   name: 'Project',   // optional, this is the name for the root element
 });
@@ -104,7 +104,7 @@ Project
 ### Nested resources
 
 ```js
-var Task = Resource.extend({
+var Task = Base.extend({
   path: '/projects/:project_id/tasks',
 });
 ```
