@@ -129,7 +129,7 @@ var Base = Resource.extend({
 
 ### Wait, but what about...
 
-Please open an issues if you have feature requests. Thanks!
+Please open issues if you have feature requests. Thanks!
 
 ## Install
 
