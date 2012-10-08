@@ -2,10 +2,8 @@
 
 # TODO
 
-- load the new attributes after sync
-- sane readme
-
 - Fake Engine
+- Custom endpoints
 - schema
 - associations
 - validations

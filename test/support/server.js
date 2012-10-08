@@ -75,6 +75,8 @@ app.post('/doors', function(req, res) {
     throw new Error('The request body should include a root element');
   }
 
+  req.body.door.id = 1;
+
   res.json(req.body);
 });
 
