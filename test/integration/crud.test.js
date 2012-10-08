@@ -3,8 +3,8 @@
  * Test support.
  */
 
-var url    = require('../support/url');
-var server = require('../support/server');
+var url = require('../support/url')
+  , server = require('../support/server');
 
 /**
  * Subject.

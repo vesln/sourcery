@@ -3,15 +3,15 @@
  * Test support.
  */
 
-var server = require('../support/server');
-var url = require('../support/url');
+var url = require('../support/url')
+  , server = require('../support/server');
 
 /**
  * Subject.
  */
 
-var Resource = require('../../');
-var BasicAuth = require('../../').BasicAuth;
+var Resource = require('../../')
+  , BasicAuth = require('../../').BasicAuth;
 
 /**
  * Fixtures.
@@ -23,7 +23,7 @@ var Repo = Resource.extend({
   auth: { type: BasicAuth, user: 'user', pass: 'pass' }
 });
 
-describe('Basic auth', function() {
+describe('Basic Auth', function() {
   before(function(done) {
     server.listen(url.PORT, done);
   });

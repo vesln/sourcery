@@ -2,13 +2,14 @@
 
 # TODO
 
-- include root element or not
+- remove the question mark
+- load the new attributes after sync
 - sane readme
 
 - Fake Engine
 - schema
-- validations
 - associations
+- validations
 - test helpers
 - handle xml
 - Custom error classes

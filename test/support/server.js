@@ -68,6 +68,16 @@ app.get('/repos', basicAuth, function(req, res) {
   res.json([{ name: 'github' }, { name: 'google' }]);
 });
 
+app.post('/doors', function(req, res) {
+  var hasRoot = !!req.body.door;
+
+  if (!hasRoot) {
+    throw new Error('The request body should include a root element');
+  }
+
+  res.json(req.body);
+});
+
 /**
  * Expose `app`.
  */
