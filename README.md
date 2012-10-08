@@ -2,6 +2,11 @@
 
 # Sourcery
 
+Sourcery is your framework for building RESTful API clients. It's heavily
+inspired by
+[ActiveResource](https://github.com/rails/activeresoucre) and behaves almost the
+same way. It's blazing fast and extremely simple to use.
+
 ## Synopsis
 
 ## Install
@@ -12,7 +17,7 @@ $ npm install sourcery
 
 ## Requirements
 
-- Node.js (http://nodejs.org/) >= 0.6.0
+- Node.js >= 0.6.0
 
 ## Tests
 
@@ -21,16 +26,20 @@ $ npm install
 $ make test
 ```
 
+## Real world examples
+
+- [aero.io API client](https://github.com/aeroio/node-client/blob/master/lib/client.js)
+
 ## TODO
 
 - More examples
 - Fake Engine
 - Custom endpoints
-- schema
-- associations
-- validations
-- test helpers
-- handle xml
+- Schema
+- Associations
+- Validations
+- Test helpers
+- XML
 - Custom error classes
 - Resource.member()
 
