@@ -4,7 +4,7 @@
 
 Sourcery is a framework for building RESTful API clients. It's heavily
 inspired by
-[ActiveResource](https://github.com/rails/activeresoucre) and behaves almost the
+[ActiveResource](https://github.com/rails/activeresource) and behaves almost the
 same way. It's blazing fast and extremely simple to use.
 
 ## Synopsis
