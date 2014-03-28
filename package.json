@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "mocha": "1.6.x",
-    "chai": "1.2.x",
+    "chai": "*",
     "express": "2.5.11"
   },
   "author": "Veselin Todorov <hi@vesln.com>",
