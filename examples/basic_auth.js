@@ -1,4 +1,3 @@
-
 /**
  * Base `Resource`.
  */
@@ -7,8 +6,6 @@ var Resource = require('..');
 
 /**
  * Basic Authentication.
- *
- * @type {Function}
  */
 
 var BasicAuth = require('..').BasicAuth;
