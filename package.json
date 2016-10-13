@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "super": "0.2.x",
-    "request": "2.11.1"
+    "request": "2.74.0"
   },
   "devDependencies": {
     "chai": "*",
